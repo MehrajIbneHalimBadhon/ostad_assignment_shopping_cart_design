@@ -222,13 +222,13 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                         children: [
                                           Row(
                                             children: [
-                                              customIconButton(Icon(Icons.remove), () {decreaseQuantity(index); }),
+                                              customIconButton(Icon(Icons.remove,color: Colors.black38,), () {decreaseQuantity(index); }),
                                               customText(
                                                   "${item[index].quantity}",
                                                   12,
                                                   AppColors.vampireblackColor,
                                                   FontWeight.bold),
-                                              customIconButton(Icon(Icons.add), () {increaseQuantity(index); }),
+                                              customIconButton(Icon(Icons.add,color: Colors.black38,), () {increaseQuantity(index); }),
                                             ],
                                           ),
                                           customText(

@@ -9,6 +9,7 @@ Widget customIconButton(Icon icon,VoidCallback onTap){
     child: GestureDetector(
       onTap: onTap,
       child: Card(
+        elevation: 5,
         shape: CircleBorder(),
         child: Padding(
           padding: const EdgeInsets.all(3.0),
