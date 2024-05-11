@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ostad_assignment_shopping_cart_design/const/app_color.dart';
 import 'package:ostad_assignment_shopping_cart_design/model/shopping_cart.dart';
 import 'package:ostad_assignment_shopping_cart_design/widget/custom_button.dart';
+import 'package:ostad_assignment_shopping_cart_design/widget/custom_icon_button.dart';
 import 'package:ostad_assignment_shopping_cart_design/widget/custom_text.dart';
 
 class ShoppingCart extends StatefulWidget {
@@ -112,8 +113,11 @@ class _ShoppingCartState extends State<ShoppingCart> {
           children: [
             Align(
               alignment: Alignment.topLeft,
-              child: customText(
-                  'My Bag', 20, AppColors.vampireblackColor, FontWeight.bold),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 3),
+                child: customText(
+                    'My Bag', 20, AppColors.vampireblackColor, FontWeight.bold),
+              ),
             ),
             Expanded(
               child: ListView.builder(
@@ -218,43 +222,13 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                         children: [
                                           Row(
                                             children: [
-                                              GestureDetector(
-                                                onTap: () =>
-                                                    decreaseQuantity(index),
-                                                child: const Card(
-                                                  shape: CircleBorder(),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsets.all(
-                                                            5.0),
-                                                    child: Icon(
-                                                      Icons.remove,
-                                                      size: 20,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
+                                              customIconButton(Icon(Icons.remove), () {decreaseQuantity(index); }),
                                               customText(
                                                   "${item[index].quantity}",
                                                   12,
                                                   AppColors.vampireblackColor,
                                                   FontWeight.bold),
-                                              GestureDetector(
-                                                onTap: () =>
-                                                    increaseQuantity(index),
-                                                child: const Card(
-                                                  shape: CircleBorder(),
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsets.all(
-                                                            5.0),
-                                                    child: Icon(
-                                                      Icons.add,
-                                                      size: 20,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
+                                              customIconButton(Icon(Icons.add), () {increaseQuantity(index); }),
                                             ],
                                           ),
                                           customText(
@@ -280,8 +254,11 @@ class _ShoppingCartState extends State<ShoppingCart> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  customText('Total amount: ', 15, AppColors.vampireblackColor,
-                      FontWeight.normal),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 3),
+                    child: customText('Total amount: ', 15, AppColors.vampireblackColor,
+                        FontWeight.normal),
+                  ),
                   const Spacer(),
                   Padding(
                     padding: const EdgeInsets.only(right: 15),

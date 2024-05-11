@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           backgroundColor: AppColors.whiteColor,
           elevation: 0,
-        )
+        ),
+        scaffoldBackgroundColor: AppColors.whiteColor
       ),
       home:  const ShoppingCart(),
     );
