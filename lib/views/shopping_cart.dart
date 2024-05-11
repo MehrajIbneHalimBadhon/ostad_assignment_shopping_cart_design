@@ -49,16 +49,34 @@ class _ShoppingCartState extends State<ShoppingCart> {
                       AppColors.vampireblackColor, FontWeight.bold)),
               children: [
                 Center(
-                  child: Wrap(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      customText(
-                          'You have added 5 ${item[index].title}  to your bag!',
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        child: customText(
+                          'You have added',
                           15,
                           AppColors.vampireblackColor,
-                          FontWeight.w500)
+                          FontWeight.w500,
+                        ),
+                      ),
+                      customText(
+                        '5',
+                        15,
+                        AppColors.vampireblackColor,
+                        FontWeight.w500,
+                      ),
+                      customText(
+                        '${item[index].title} to your bag!',
+                        15,
+                        AppColors.vampireblackColor,
+                        FontWeight.w500,
+                      ),
                     ],
                   ),
                 ),
+
                 Padding(
                   padding: const EdgeInsets.only(top: 20),
                   child: customButton('OKAY', () {
@@ -102,7 +120,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                   itemCount: item.length,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      padding: const EdgeInsets.symmetric(vertical: 5),
                       child: Card(
                         child: Row(
                           children: [

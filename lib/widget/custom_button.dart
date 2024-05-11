@@ -3,7 +3,7 @@ import 'package:ostad_assignment_shopping_cart_design/const/app_color.dart';
 
 Widget customButton(String buttonName,VoidCallback onPressed) {
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 15),
+    padding: const EdgeInsets.symmetric(horizontal: 20),
     child: ElevatedButton(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(AppColors.buttonColor),
